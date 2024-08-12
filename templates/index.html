@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StartUp Advisor</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+</head>
+<body>
+    <div id="ideas">
+         <div class="idea">How can I find mentors for my startup</div>
+        <div class="idea">how can i validate my startup idea</div>
+        <div class="idea">what are the financial considerations for startups?</div>
+        <div class="idea">HOW DO I PROTECT MY STARTUP'S INTELLECTUAL PROPERTY?</div>
+    </div>
+
+    <div id="response">
+        <div id="questiondiv"></div>
+    </div>
+    <div id="questionarea">
+        <input type="text" id='question' name="question">
+        <button id="submitbtn" >Submit</button>
+    </div>
+    <script>
+         window.data = {{ideas| tojson | safe}};
+    </script>
+    <script type=module src="{{url_for('static',filename='index.js')}}"></script>
+</body>
+</html>
